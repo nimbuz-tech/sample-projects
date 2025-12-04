@@ -1,0 +1,10 @@
+spring.application.name=Course-Registration-System
+
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/course_reg_sym
+spring.datasource.username=postgres
+spring.datasource.password=Raj300602@
+
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
