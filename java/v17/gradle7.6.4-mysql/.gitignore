@@ -1,0 +1,57 @@
+# Gradle build directories
+/build/
+/out/
+
+# Gradle wrapper jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Target folders in subprojects or Maven builds (if any)
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle cache files (optional, usually local)
+.gradle/
+
+# STS (Spring Tool Suite) files
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# NetBeans files
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code files
+.vscode/
+
+# Other typical ignores
+*.log
+*.class
+.DS_Store
+
+
+# Spring Boot application config
+application.properties
+application.yml
+application-*.properties
+application-*.yml
+
+# If located in src/main/resources
+src/main/resources/application.properties
+src/main/resources/application.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
