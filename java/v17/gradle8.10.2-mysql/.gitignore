@@ -1,0 +1,120 @@
+# ==================================
+# Gradle
+# ==================================
+.gradle/
+build/
+!gradle/wwrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Ignore all Gradle metadata files
+*.lock
+*.bin
+*.lst
+*.probe
+
+# Common Gradle files
+.gradle/
+build/
+out/
+
+# ==================================
+# Java
+# ==================================
+*.class
+*.jar
+*.war
+*.ear
+
+# ==================================
+# IDE Files
+# ==================================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+.project
+.classpath
+.settings/
+
+.vscode/
+
+# =========================
+# Spring Boot Sensitive Files
+# =========================
+
+# Ignore root-level properties/yml files
+/application.properties
+/application.yml
+/application-*.properties
+/application-*.yml
+
+# Environment files
+.env
+*.env
+
+# =========================
+# Gradle Specific
+# =========================
+
+# Gradle cache & metadata (includes cache.properties)
+.gradle/
+
+# Build output
+build/
+**/build/
+
+# Local gradle properties (may contain credentials)
+gradle.properties
+
+# =========================
+# Build Artifacts
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Temporary & Backup Files
+# =========================
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE Files
+# =========================
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# Spring Boot application config
+application.properties
+application.yml
+application-*.properties
+application-*.yml
+
+# If located in src/main/resources
+src/main/resources/application.properties
+src/main/resources/application.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
