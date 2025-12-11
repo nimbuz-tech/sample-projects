@@ -1,0 +1,11 @@
+# Multi-stage Dockerfile for a small Go static server
+FROM golang:1.21-alpine AS build
+WORKDIR /src
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags='-s -w' -o /go-webapp ./
+
+FROM scratch
+COPY --from=build /go-webapp /go-webapp
+COPY --from=build /src/static /static
+EXPOSE 8080
+ENTRYPOINT ["/go-webapp"]
