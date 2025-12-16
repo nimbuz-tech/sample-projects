@@ -4,15 +4,11 @@ A minimal **.NET 8 Web API** with **MySQL** and **EF Core** providing full CRUD 
 
 ## Quick start
 
-1. Ensure MySQL 8 is running locally
-2. Update `appsettings.json` connection string.
-3. Restore & run:
+1. Update `appsettings.json` connection string.
+2. Restore & run:
 
 ```bash
 dotnet restore
-dotnet tool install --global dotnet-ef
-dotnet ef migrations add InitialCreate
-dotnet ef database update
 dotnet run
 ```
 
