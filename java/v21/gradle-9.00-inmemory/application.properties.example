@@ -1,2 +1,0 @@
-spring.application.name=Course-Registration-System
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
