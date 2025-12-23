@@ -1,0 +1,93 @@
+# ---------------------------
+# Gradle build directories
+# ---------------------------
+/build/
+/**/build/
+
+# Gradle wrapper (keep only JAR)
+# /gradle/
+/!gradle/wrapper/
+/!gradle/wrapper/gradle-wrapper.jar
+
+# ---------------------------
+# Gradle caches
+# ---------------------------
+/.gradle/
+.gradle/
+/.gradle/**
+
+# Ignore Gradle cache binary files explicitly
+.gradle/**/*.bin
+.gradle/**/*.lock
+.gradle/**/fileHashes/
+.gradle/**/outputFiles/
+.gradle/**/buildOutputCleanup/
+.gradle/**/resourceHashes*/
+
+# ---------------------------
+# Maven wrapper (if present)
+# ---------------------------
+!.mvn/wrapper/maven-wrapper.jar
+
+# ---------------------------
+# Eclipse files
+# ---------------------------
+.classpath
+.project
+.settings/
+
+# ---------------------------
+# IntelliJ Idea
+# ---------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# ---------------------------
+# VS Code
+# ---------------------------
+.vscode/
+
+# ---------------------------
+# STS
+# ---------------------------
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# ---------------------------
+# NetBeans
+# ---------------------------
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ---------------------------
+# Maven target
+# ---------------------------
+/target/
+/**/target/
+
+# ---------------------------
+# Spring Boot Config Files
+# ---------------------------
+application.properties
+application.yml
+application-*.properties
+application-*.yml
+
+# If located under resources
+src/main/resources/application.properties
+src/main/resources/application.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
+
+# ---------------------------
+# Misc
+# ---------------------------
+HELP.md
