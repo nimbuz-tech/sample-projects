@@ -1,0 +1,66 @@
+<div class="header">
+  <div>
+    <div class="title">Create Order</div>
+    <div class="sub">Draft → Confirm (reduces stock).</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-title">Order Details</div>
+
+    <div *ngIf="!orderId">
+      <form [formGroup]="headerForm" (ngSubmit)="startDraft()" class="stack">
+        <label>
+          <span>Customer Name</span>
+          <input class="input" formControlName="customerName" placeholder="Customer" />
+        </label>
+        <button class="btn primary" type="submit">Start Draft</button>
+      </form>
+    </div>
+
+    <div *ngIf="orderId">
+      <div class="pill">Draft ID: {{ orderId.slice(0, 10) }}</div>
+
+      <form [formGroup]="lineForm" (ngSubmit)="addLine()" class="line">
+        <select class="input" formControlName="productId">
+          <option value="">Select product</option>
+          <option *ngFor="let p of products" [value]="p.id">
+            {{ p.sku }} — {{ p.name }} (Stock: {{ p.stock }})
+          </option>
+        </select>
+        <input class="input" type="number" formControlName="qty" />
+        <button class="btn" type="submit">Add</button>
+      </form>
+
+      <div class="table-wrap" *ngIf="draft">
+        <table>
+          <thead><tr><th>Product</th><th>Qty</th><th>Unit</th><th>Line Total</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let l of draft.lines">
+              <td>{{ nameOf(l.productId) }}</td>
+              <td>{{ l.qty }}</td>
+              <td>₹ {{ l.unitPrice | number:'1.0-0' }}</td>
+              <td>₹ {{ (l.qty * l.unitPrice) | number:'1.0-0' }}</td>
+            </tr>
+            <tr *ngIf="draft.lines.length===0"><td colspan="4" class="muted">Add items to the order.</td></tr>
+          </tbody>
+        </table>
+        <div class="total">Total: ₹ {{ draft.total | number:'1.0-0' }}</div>
+      </div>
+
+      <button class="btn primary full" [disabled]="!draft || draft.lines.length===0" (click)="confirm()">
+        Confirm Order
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Notes</div>
+    <div class="muted">
+      <div class="tip">Start a draft, add multiple items, then confirm.</div>
+      <div class="tip">Confirm creates OUT stock transactions automatically.</div>
+      <div class="tip">For demo, data persists in browser LocalStorage.</div>
+    </div>
+  </div>
+</div>
