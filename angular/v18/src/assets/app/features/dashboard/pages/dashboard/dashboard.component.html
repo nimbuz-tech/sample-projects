@@ -1,0 +1,54 @@
+<div class="grid">
+  <div class="card kpi">
+    <div class="label">Products</div>
+    <div class="value">{{ kpis.productCount }}</div>
+  </div>
+  <div class="card kpi">
+    <div class="label">Low Stock</div>
+    <div class="value">{{ kpis.lowStock }}</div>
+  </div>
+  <div class="card kpi">
+    <div class="label">Stock Value</div>
+    <div class="value">₹ {{ kpis.totalStockValue | number:'1.0-0' }}</div>
+  </div>
+  <div class="card kpi">
+    <div class="label">Confirmed Orders</div>
+    <div class="value">{{ kpis.confirmedOrders }}</div>
+  </div>
+
+  <div class="card span2">
+    <div class="card-title">Low Stock Items</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>SKU</th><th>Name</th><th>Stock</th><th>Reorder</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let p of lowStockProducts">
+            <td>{{ p.sku }}</td>
+            <td>{{ p.name }}</td>
+            <td><span class="badge warn">{{ p.stock }}</span></td>
+            <td>{{ p.reorderLevel }}</td>
+          </tr>
+          <tr *ngIf="lowStockProducts.length === 0"><td colspan="4" class="muted">No low stock items.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card span2">
+    <div class="card-title">Recent Orders</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Order</th><th>Customer</th><th>Status</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let o of recentOrders">
+            <td>{{ o.id.slice(0, 8) }}</td>
+            <td>{{ o.customerName }}</td>
+            <td><span class="badge" [class.ok]="o.status==='CONFIRMED'">{{ o.status }}</span></td>
+            <td>₹ {{ o.total | number:'1.0-0' }}</td>
+          </tr>
+          <tr *ngIf="recentOrders.length === 0"><td colspan="4" class="muted">No orders yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
